@@ -57,7 +57,7 @@ function runEnter () {
     let enterDate = d3.select("#datetime").property("value");
 
     // Print value
-    enterDate=formatDate(enterDate);
+    enterDate = formatDate(enterDate);
     console.log(enterDate);
 
     // Dropdown selections
@@ -69,7 +69,7 @@ function runEnter () {
     console.log(chooseCity, chooseState, chooseCountry, chooseShape);
 
     // Filter by selected conditions
-    let filteredDate=tableData
+    let filteredDate = tableData
         .filter(ufoInfo => ufoInfo.datetime==enterDate)
         .filter(ufoInfo => ufoInfo.city==chooseCity || chooseCity=='all')
         .filter(ufoInfo => ufoInfo.state==chooseState || chooseState=='all')
