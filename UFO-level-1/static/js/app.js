@@ -30,14 +30,14 @@ function runEnter () {
     d3.event.preventDefault();
 
     // Select input element and get value property
-    let enterDate=d3.select("#datetime").property("value");
+    let enterDate = d3.select("#datetime").property("value");
 
     // Print value
-    enterDate=formatDate(enterDate);
+    enterDate = formatDate(enterDate);
     console.log(enterDate);
 
     // Filter by selected date
-    let filteredDate=tableData.filter(ufoDate => ufoDate.datetime==enterDate);
+    let filteredDate = tableData.filter(ufoDate => ufoDate.datetime==enterDate);
     console.log(filteredDate);
     
     // Clear table row element
@@ -45,7 +45,7 @@ function runEnter () {
 
     // Append table content
     filteredDate.forEach((ufoDate)=> {
-        let row =tbody.append("tr");
+        let row = tbody.append("tr");
         Object.entries(ufoDate).forEach(([key, value]) => {
             var cell = row.append("td");
             cell.text(value);
